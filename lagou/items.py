@@ -16,17 +16,23 @@ class LagouItem(scrapy.Item):
     job = scrapy.Field()
     # 城市
     city = scrapy.Field()
-    # 地区
+    # 区域
     area = scrapy.Field()
     # 发布时间
     release_time = scrapy.Field()
     # 薪水
     salary = scrapy.Field()
     # 工作年限
-    work_time = scrapy.Field()
+    experience = scrapy.Field()
     # 学历
-    education_background = scrapy.Field()
+    education = scrapy.Field()
     # 公司
     company = scrapy.Field()
     # 行业
     industry = scrapy.Field()
+    # 融资
+    financing = scrapy.Field()
+    # 公司规模
+    company_size = scrapy.Field()
+
+
