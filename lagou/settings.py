@@ -21,7 +21,7 @@ USER_AGNET = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36
 
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -35,7 +35,7 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+# COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -54,9 +54,12 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'lagou.middlewares.LagouDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+   # 'lagou.middlewares.LagouDownloaderMiddleware': 543,
+   'lagou.middlewares.ProxyMiddleware': 551,
+   # 'lagou.middlewares.httpproxyMiddleware': None  # 禁用系统自带的代理中间件，使用自定义的代理
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -95,4 +98,7 @@ ITEM_PIPELINES = {
 mongo_host = '127.0.0.1'
 mongo_port = 27017
 mongo_db_name = 'lagou'
-mongo_collection = 'front_end'
+# mongo_collection = 'front_end_2019_7'
+mongo_collection = 'react_native_2019_7'
+
+# HTTPERROR_ALLOWED_CODES = [301, 302]

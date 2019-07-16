@@ -4,9 +4,11 @@ from lagou.items import LagouItem
 
 
 class LagouSpider(scrapy.Spider):
-    name = 'lagou_spider'
+    name = 'lagou_spider' # 爬虫的名字，唯一性
     allowed_domains = ['www.lagou.com']
-    start_urls = ['https://www.lagou.com/zhaopin/webqianduan?filterOption=3']
+    # start_urls = ['https://www.lagou.com/zhaopin/webqianduan/1/?filterOption=3']
+    # start_urls = ['https://www.lagou.com/zhaopin/reactnative?filterOption=3']
+    start_urls = ['https://www.lagou.com/jobs/list_react%20native/1']
 
     def parse(self, response):
         item_list = response.xpath('//div[@id="s_position_list"]/ul/li')

@@ -8,6 +8,7 @@ import pymongo
 # 从settings导入数据
 from lagou.settings import mongo_host, mongo_port, mongo_db_name, mongo_collection
 
+
 class LagouPipeline(object):
     def __init__(self):
         host = mongo_host
